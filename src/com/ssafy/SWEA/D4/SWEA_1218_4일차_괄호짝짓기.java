@@ -18,12 +18,8 @@ public class SWEA_1218_4일차_괄호짝짓기 {
 			
 			// 스택 비어있는지 체크하기!! 
 			for (char c:arr) {
-				if (c=='(' || c=='{' || c=='[' || c=='<') {	// 여는 괄호이면
+				if (st.isEmpty() || c=='(' || c=='{' || c=='[' || c=='<') {	// 스택이 비어있거나 여는 괄호이면
 					st.push(c);
-				} 
-				else if (st.isEmpty()) {
-					result = false;
-					break;
 				}
 				else if ((c==')' && st.peek()=='(') || 
 					(c=='}' && st.peek()=='{') ||
