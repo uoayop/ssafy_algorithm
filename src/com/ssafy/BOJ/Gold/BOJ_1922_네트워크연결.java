@@ -2,10 +2,11 @@ package com.ssafy.BOJ.Gold;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BOJ_1922_네트워크연결 {
-	public class edge implements Comparable<edge>{
+	public static class edge implements Comparable<edge>{
 		int start, end, weight;
 
 		public edge(int start, int end, int weight) {
@@ -59,8 +60,23 @@ public class BOJ_1922_네트워크연결 {
 		list = new edge[m];
 		
 		for (int i=0; i<m; i++) {
-			
+			st = new StringTokenizer(br.readLine());
+			int from = Integer.parseInt(st.nextToken());
+			int to = Integer.parseInt(st.nextToken());
+			int w = Integer.parseInt(st.nextToken());
 			list[i] = new edge(from,to,w);
 		}
+		
+		Arrays.sort(list);
+		make();
+	
+		int cnt = 0, result = 0;
+		for (edge e: list) {
+			if (union(e.start, e.end)) {
+				result += e.weight;
+				if (++cnt == n-1) break;
+			}
+		}
+		System.out.println(result);
 	}
 }
