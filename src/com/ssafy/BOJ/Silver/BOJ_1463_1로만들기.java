@@ -9,7 +9,7 @@ public class BOJ_1463_1로만들기 {
 		int x = sc.nextInt();
 		int[] d = new int[x+1];
 		
-		/* d[i] = i를 1로 만들 때 가장 적게 연산을 사용하는 횟수
+		/* d[i] = i를 1로 만들 때 연산을 사용하는 횟수
 		 * 
 		 * d[1] = 0
 		 * d[2] = 2 - 1 = 1 or 2 / 2 = 1
