@@ -1,4 +1,4 @@
-package com.ssafy.SWEA.D4;
+package com.ssafy.CantSolving;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
